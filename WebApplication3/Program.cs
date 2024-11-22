@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Context>
-    (options => options.UseSqlServer("Server=TENTIRJN0183\\SQLEXPRESS;Database=WebApp3;Trusted_Connection=True;"));
+    (options => options.UseSqlServer("Server=TENTIRJN0183\\SQLEXPRESS;Database=WebApp3;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServercertificate=True"));
 
 var app = builder.Build();
 
