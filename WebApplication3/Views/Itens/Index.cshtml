@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebApplication3.Models.Itens>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.numeroNf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valorTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataNf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cnpjEmissorNf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cnpjDestinatarioNf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.numeroNf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataNf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cnpjEmissorNf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cnpjDestinatarioNf)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.notaFiscalId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.notaFiscalId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.notaFiscalId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

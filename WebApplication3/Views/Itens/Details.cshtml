@@ -1,0 +1,48 @@
+﻿@model WebApplication3.Models.Itens
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Itens</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.numeroNf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numeroNf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.valorTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.valorTotal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataNf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataNf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cnpjEmissorNf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cnpjEmissorNf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cnpjDestinatarioNf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cnpjDestinatarioNf)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.notaFiscalId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
