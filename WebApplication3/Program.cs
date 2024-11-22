@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using WebApplication3.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<Context>
+    (options => options.UseSqlServer("Server=TENTIRJN0183\\SQLEXPRESS;Database=WebApp3;Trusted_Connection=True;"));
 
 var app = builder.Build();
 

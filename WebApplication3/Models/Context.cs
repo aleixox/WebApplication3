@@ -11,15 +11,5 @@ namespace WebApplication3.Models
         }
 
         public DbSet<Itens> Item { get; set; }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=APICRUD;Username=Aleixo;Password=adminInicial");
-            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
-            optionsBuilder.EnableSensitiveDataLogging();
-
-            base.OnConfiguring(optionsBuilder);
-        }
     }
 }
